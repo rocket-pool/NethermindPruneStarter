@@ -76,7 +76,7 @@ namespace NethermindPruneStarter
                     }
                 }
 
-                Console.WriteLine($"Trying again in {retryTime} seconds... ({i + 1}/{retryCount}");
+                Console.WriteLine($"Trying again in {retryTime} seconds... ({i + 1}/{retryCount})");
                 Thread.Sleep(retryTime * 1000);
             }
 
