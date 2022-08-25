@@ -22,7 +22,7 @@ namespace NethermindPruneStarter
             using HttpClient client = new();
 
             int retryTime = 3;
-            int retryCount = 10;
+            int retryCount = 100;
             for (int i = 0; i < retryCount; i++)
             {
                 // Generate the request payload
