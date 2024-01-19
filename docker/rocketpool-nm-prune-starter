@@ -1,0 +1,14 @@
+# Build stage
+FROM golang:latest AS builder
+ARG TARGETARCH
+WORKDIR /app
+COPY . .
+RUN CGO_ENABLED=0 GOARCH=${TARGETARCH} GOOS=linux go build -o nm-prune-starter nm-prune-starter.go
+
+# Final stage
+FROM debian:bullseye-slim
+
+COPY --from=builder /app/nm-prune-starter /nm-prune-starter
+
+# Container entry point
+ENTRYPOINT ["/go/bin/nm-prune-starter"]

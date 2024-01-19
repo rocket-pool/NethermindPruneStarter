@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Custom entries
 pkg/
+
+nm-prune-starter-linux-amd64
+nm-prune-starter-linux-arm64
