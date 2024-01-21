@@ -86,6 +86,8 @@ func main() {
 			fmt.Printf("Error starting prune: code %d, message = %s, data = %v\n", response.Error.Code, response.Error.Message, response.Error.Data)
 		} else {
 			fmt.Printf("Success: Pruning is now \"%s\"\n", response.Result)
+			fmt.Println("Your main execution client is now pruning. You can follow its progress with `rocketpool service logs eth1`.")
+			fmt.Println("NOTE: While pruning, you **cannot** interrupt the client (e.g. by restarting) or you risk corrupting the database!\nYou must let it run to completion!")
 			return
 		}
 

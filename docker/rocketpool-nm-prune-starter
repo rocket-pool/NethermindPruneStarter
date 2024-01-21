@@ -8,7 +8,7 @@ RUN CGO_ENABLED=0 GOARCH=${TARGETARCH} GOOS=linux go build -o nm-prune-starter n
 # Final stage
 FROM debian:bullseye-slim
 
-COPY --from=builder /app/nm-prune-starter /nm-prune-starter
+COPY --from=builder /app/nm-prune-starter /go/bin/nm-prune-starter
 
 # Container entry point
 ENTRYPOINT ["/go/bin/nm-prune-starter"]
